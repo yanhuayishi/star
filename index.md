@@ -1,37 +1,84 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>李佳</title>
+</head>
+<style>
+    .center{
+        position: absolute;
+        width: 180px;
+        height: 180px;
+    }
+    html,body{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       }
+    #wrap{
+        width: 200px;
+        height:200px;
+        transform: rotateY(0deg) rotateZ(0deg)  translateZ(-90px);
+        transform-style: preserve-3d;
+        transition: transform 10s linear;
 
-You can use the [editor on GitHub](https://github.com/yanhuayishi/star/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+    }
+    #d1{
+        background: red;
+    }
+    #d2{
+        background: blue;
+        transform-origin: 0 50%;
+        transform: rotateY(-90deg);
+     }
+    #d3{
+        background: pink; 
+        transform-origin: 100% 0;
+        transform: rotateY(90deg);
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+    }
+    #d4{
+        background: darkgreen;
+        transform-origin: 50% 0;
+        transform: rotateX(90deg);
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+    }
+    #d5{
+        background: gold;
+        transform-origin: 50% 100%;
+        transform: rotateX(-90deg);
 
-```markdown
-Syntax highlighted code block
+    }
+    #d6{
+        background: firebrick;
+       transform-origin: 50% 50%;
+        transform: translateZ(180px);
+    }
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/yanhuayishi/star/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+</style>
+<body >
+<div id="wrap" >
+    <div id="d1" class="wall center"><img src="F:\tupian\4.jpg"  height="180px" width="180px"/></div>
+    <div id="d2" class="wall center"> <img src="F:\tupian\5.jpg"  height="180px" width="180px"/></div>
+    <div id="d3" class="wall center"> <img src="F:\tupian\6.jpg"  height="180px" width="180px"/></div>
+    <div id="d4" class="wall center"><img src="F:\tupian\7.jpg"  height="180px" width="180px"/></div>
+    <div id="d5" class="wall center"> <img src="F:\tupian\8.jpg"  height="180px" width="180px"/></div>
+    <div id="d6" class="wall center"> <img src="F:\tupian\9.jpg"  height="180px" width="180px"/></div>
+</div>
+</body>
+</html>
+<script>
+    window.onload = function(){
+        var warp = document.getElementById("wrap"), x=0, z=0;
+        function go(){
+            z+=400;
+            x+=600;
+            warp.style.webkitTransform = "-webkit-rotateY("+z+"deg) rotateZ("+x+"deg)  translateZ(-90px)";
+            warp.style.transform = "rotateY("+z+"deg) rotateZ("+x+"deg)  translateZ(-90px)";
+        setTimeout(go,3000)
+        }
+        go();
+    }
+</script>
